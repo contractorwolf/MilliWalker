@@ -63,6 +63,11 @@ extern "C" void __cxa_pure_virtual() {;}
 
 //
 //
+void SendCenterCommand(int time_delay);
+void SendFirstCommand(int time_delay);
+void SendSecondCommand(int time_delay);
+void SendThirdCommand(int time_delay);
+void SendFourthCommand(int time_delay);
 void SendServoCommand(String command, int time_delay);
 void SendServoStatement(int chan,int ang, int time_delay);
 

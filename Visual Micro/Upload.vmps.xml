@@ -3,30 +3,53 @@
     <Platform Name="arduino10x" Package="arduino" Platform="avr" Architecture="avr">
       <Board Name="micro" Description="Arduino Micro" CoreFolder="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\cores\arduino" VariantFullPath="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\variants\micro" McuIdePath="C:\Program Files\arduino\arduino-1.0.3\" McuSketchBookPath="C:\Users\james\Documents\Arduino" name="Arduino Micro" upload.protocol="avr109" upload.maximum_size="28672" upload.speed="57600" upload.disable_flushing="true" bootloader.low_fuses="0xff" bootloader.high_fuses="0xd8" bootloader.extended_fuses="0xcb" bootloader.path="caterina" bootloader.file="Caterina-Micro.hex" bootloader.unlock_bits="0x3F" bootloader.lock_bits="0x2F" build.mcu="atmega32u4" build.f_cpu="16000000L" build.vid="0x2341" build.pid="0x8037" build.core="arduino" build.variant="micro" runtime.ide.path="C:\Program Files\arduino\arduino-1.0.3\" build.system.path="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\system" runtime.ide.version="103" originalid="micro" vm.platform.root.path="C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\arduino10x" ide.hint="Arduino 0023 and 1.0.x Ide" ide.location.key="Arduino" ide.location.ide.winreg="Arduino 1.0.x Application" ide.location.sketchbook.winreg="Arduino 1.0.x Sketchbook" ide.location.sketchbook.preferences="sketchbook.path" ide.location.sketchbook.default="%MYDOCUMENTS%\arduino" ide.location.preferences="%VM_APPDATA_ROAMING%\arduino\preferences.txt" ide.default.package="arduino" ide.default.platform="avr" ide.multiplatform="true" ide.includes="arduino.h" ide.platformswithoutpackage="true" ide.includes.fallback="wprogram.h" ide.extension="ino" ide.extension.fallback="pde" ide.versionLTEQ="149" ide.exe="arduino.exe" ide.hosts="atmel" ide.url="http://arduino.cc/en/Main/Software" vm.debug="true" software="ARDUINO" ide.appid="arduino10x" location.sketchbook="C:\Users\james\Documents\Arduino" build.core.vmresolved="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\cores\arduino" build.core.parentfolder.vmresolved="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\cores" build.core.coresparentfolder.vmresolved="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino" vm.core.include="arduino.h" build.board="AVR_MICRO" vm.boardsource.path="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino" runtime.platform.path="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino" vm.platformname.name="avr" build.arch="AVR" build.variant.vmresolved="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\variants\micro" vm.runtime.compiler.showwarnings="false" serial.port.file="COM46" serial.port="COM46" compiler.path="C:\Program Files\arduino\arduino-1.0.3\hardware\tools\avr\bin\" includes=" -I&quot;C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\cores\arduino&quot;  -I&quot;C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\variants\micro&quot;  -I&quot;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers\VM_DBG&quot;  -I&quot;C:\Program Files\arduino\arduino-1.0.3\libraries&quot;  -I&quot;C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\libraries&quot;  -I&quot;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers&quot;  -I&quot;C:\Users\james\Documents\Arduino\libraries&quot; " build.path="C:\Users\james\AppData\Local\V.Micro\Arduino\Builds\MilliWalker\micro" build.project_name="MilliWalker" build.variant.path="C:\Program Files\arduino\arduino-1.0.3\hardware\arduino\variants\micro" archive_file="core.a" object_file="C:\Users\james\AppData\Local\V.Micro\Arduino\Builds\MilliWalker\micro\VM_DBG\VM_DBG.cpp.o" source_file="C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers\VM_DBG\VM_DBG.cpp" object_files="&quot;C:\Users\james\AppData\Local\V.Micro\Arduino\Builds\MilliWalker\micro\MilliWalker.cpp.o&quot; &quot;C:\Users\james\AppData\Local\V.Micro\Arduino\Builds\MilliWalker\micro\VM_DBG\VM_mem_check.c.o&quot; &quot;C:\Users\james\AppData\Local\V.Micro\Arduino\Builds\MilliWalker\micro\VM_DBG\VM_DBG.cpp.o&quot; " build.architecture="avr" vmresolved.compiler.path="C:\Program Files\arduino\arduino-1.0.3\hardware\tools\avr\bin\" vmresolved.tools.path="C:\Program Files\arduino\arduino-1.0.3\hardware\tools\avr" />
     </Platform>
-    <Compile IsDebugStart="1" CompilerErrors="0" ConfigurationName="Debug" StopOnError="False" OptimiseLibs="True" OptimiseCore="True" BuildPath="C:\Users\james\AppData\Local\V.Micro\Arduino\Builds\MilliWalker\micro" SketchName="MilliWalker" ReportDigitalPins="0" ReportAnalogPins="0" ReportI2C="0" ReportFreeMemory="0" IncludeDebug="1" LastDebugPreProcessorDefinitions="VM_DEBUG;VM_DEBUG_ENABLE 1;VM_DEBUG_BANDWIDTH_THROTTLE_MS 100;VM_DEBUGGER_TYPE_HARDWARESERIAL 0;VM_DEBUGGER_TYPE_SOFTWARESERIAL 1;VM_DEBUGGER_TYPE_FASTSERIAL 2;VM_DEBUGGER_TYPE_USB 3;VM_DEBUGGER_TYPE_TEENSY 4;VM_DEBUGGER_TYPE_UART 5;VM_DEBUGGER_TYPE_USART 6;VM_DEBUGGER_TYPE_USBSERIAL 7;VM_DEBUGGER_TYPE_TTYUART 8;VM_DEBUGGER_TYPE_NET_CONSOLE 9;VM_DEBUGGER_TYPE_Uart 10;VM_DEBUGGER_TYPE_COSA 11;VM_DEBUGGER_TYPE VM_DEBUGGER_TYPE_USB;VM_DEBUG_BREAKPAUSE;" IncludesDebug="1" IsCompiled="1" />
+    <Compile IsDebugStart="1" CompilerErrors="0" ConfigurationName="Debug" StopOnError="False" OptimiseLibs="True" OptimiseCore="True" BuildPath="C:\Users\james\AppData\Local\V.Micro\Arduino\Builds\MilliWalker\micro" SketchName="MilliWalker" ReportDigitalPins="0" ReportAnalogPins="0" ReportI2C="0" ReportFreeMemory="0" IncludeDebug="1" LastDebugPreProcessorDefinitions="VM_DEBUG;VM_DEBUG_ENABLE 1;VM_DEBUG_BANDWIDTH_THROTTLE_MS 50;VM_DEBUGGER_TYPE_HARDWARESERIAL 0;VM_DEBUGGER_TYPE_SOFTWARESERIAL 1;VM_DEBUGGER_TYPE_FASTSERIAL 2;VM_DEBUGGER_TYPE_USB 3;VM_DEBUGGER_TYPE_TEENSY 4;VM_DEBUGGER_TYPE_UART 5;VM_DEBUGGER_TYPE_USART 6;VM_DEBUGGER_TYPE_USBSERIAL 7;VM_DEBUGGER_TYPE_TTYUART 8;VM_DEBUGGER_TYPE_NET_CONSOLE 9;VM_DEBUGGER_TYPE_Uart 10;VM_DEBUGGER_TYPE_COSA 11;VM_DEBUGGER_TYPE VM_DEBUGGER_TYPE_USB;VM_DEBUG_BREAKPAUSE;" IncludesDebug="1" IsCompiled="1" />
     <Debug EnableBreak="1" DebugEnabled="1" RemotePortSpeedWrittenToDebugSource="115200" />
     <VCCodeModel>
       <VCCodeMacros />
     </VCCodeModel>
     <BreakPoints>
-      <BreakPoint Index="1" Name="MilliWalker.ino, line 87" Id="d9a3dfde-cf7e-4d2a-9606-079873d7602f" Enabled="1" Message="{command}" MessageTextType="2" PreProcessedMessage="{0}" Condition="" ConditionType="1" CurrentHits="0" File="c:\users\james\documents\arduino\milliwalker\milliwalker.ino" FileLine="87" FileColumn="1" FunctionName="" FunctionLineOffset="1" FunctionColumnOffset="1" HitCountTarget="1" HitCountType="1" Language="C++" LocationType="3" Tag="&lt;vmbp Id='d9a3dfde-cf7e-4d2a-9606-079873d7602f'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="0">
-        <Source>80	    digitalWrite(led, HIGH);   
-81	    delay(30);               
-82	    digitalWrite(led, LOW); 
-83		//delay(100);  
-84	}
-85	
-86	
---&gt;87	void SendServoCommand(String command, int time_delay){
-88		Serial1.print(command);
-89		Serial1.print("T");
-90		Serial1.println(time_delay);
-91		//Serial.print(command);
-92		//Serial.print("T");
-93		//Serial.println(time_delay);
-94		delay(time_delay); 
-95		//Serial.println(command);
-96	}
+      <BreakPoint Index="1" Name="MilliWalker.ino, line 48" Id="fd090ace-00ac-4e33-9e83-061ea516ae63" Enabled="1" Message="{millis()}" MessageTextType="2" PreProcessedMessage="{0}" Condition="" ConditionType="1" CurrentHits="0" File="c:\users\james\documents\arduino\milliwalker\milliwalker.ino" FileLine="48" FileColumn="1" FunctionName="" FunctionLineOffset="1" FunctionColumnOffset="1" HitCountTarget="1" HitCountType="1" Language="C++" LocationType="3" Tag="&lt;vmbp Id='fd090ace-00ac-4e33-9e83-061ea516ae63'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="0">
+        <Source>41	
+42	  Serial.begin(115200);
+43	  Serial1.begin(9600);
+44	  
+45	  delay(2000);
+46	}
+47	
+--&gt;48	void loop()
+49	{
+50	
+51		
+52		int time_delay = 200;
+53	
+54		while(Serial.available()) {
+55	
+56			incomingCommand = "";
+57			character = Serial.read();
+</Source>
+        <MessageVariables>
+          <MessageVariable Name="millis()" Index="1" />
+        </MessageVariables>
+      </BreakPoint>
+      <BreakPoint Index="2" Name="MilliWalker.ino, line 145" Id="653b1d8d-e1e9-4f93-a50f-1ee6df4a2078" Enabled="1" Message="{command}" MessageTextType="2" PreProcessedMessage="{0}" Condition="" ConditionType="1" CurrentHits="0" File="c:\users\james\documents\arduino\milliwalker\milliwalker.ino" FileLine="145" FileColumn="1" FunctionName="" FunctionLineOffset="1" FunctionColumnOffset="1" HitCountTarget="1" HitCountType="1" Language="C++" LocationType="3" Tag="&lt;vmbp Id='653b1d8d-e1e9-4f93-a50f-1ee6df4a2078'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="0">
+        <Source>138		SendServoCommand("#1P1100#2P1600#3P1500#4P1200#5P1200#6P1600#7P1500#8P1200",time_delay);
+139	}
+140	
+141	
+142	
+143	
+144	
+--&gt;145	void SendServoCommand(String command, int time_delay){
+146		Serial1.print(command);
+147		Serial1.print("T");
+148		Serial1.println(time_delay);
+149		//Serial.print(command);
+150		//Serial.print("T");
+151		//Serial.println(time_delay);
+152		delay(time_delay); 
+153		//Serial.println(command);
+154	}
 </Source>
         <MessageVariables>
           <MessageVariable Name="command" Index="1" />
