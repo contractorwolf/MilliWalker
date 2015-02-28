@@ -49,7 +49,7 @@ void loop()
 {
 
 	
-	int time_delay = 200;
+	int time_delay = 300;
 
 	while(Serial.available()) {
 
@@ -60,47 +60,32 @@ void loop()
 
 	if (incomingCommand == "w") {
 		//match with all 4 leg sets
-		//SendServoCommand("#1P1100#2P1200#3P1500#4P1600#5P1200#6P1250#7P1500#8P1600",time_delay);
-		//SendServoCommand("#1P1500#2P1200#3P1100#4P1600#5P1500#6P1250#7P1100#8P1600",time_delay);
-		//SendServoCommand("#1P1500#2P1600#3P1100#4P1200#5P1500#6P1600#7P1100#8P1200",time_delay);
-		//SendServoCommand("#1P1100#2P1600#3P1500#4P1200#5P1200#6P1600#7P1500#8P1200",time_delay);
-
-
 		SendFirstCommand(time_delay);
 		SendSecondCommand(time_delay);
 		SendThirdCommand(time_delay);
 		SendFourthCommand(time_delay);
-
+	}else if (incomingCommand == "r") {
+		//reverse all, not sure what this will look like
+		SendFourthCommand(time_delay);
+		SendThirdCommand(time_delay);
+		SendSecondCommand(time_delay);		
+		SendFirstCommand(time_delay);
 	}else if (incomingCommand == "c") {
-		//match with all 4 leg sets
-		//SendServoCommand("#1P1300#2P1300#3P1300#4P1300#5P1300#6P1300#7P1300#8P1300",time_delay);
 		SendCenterCommand(time_delay);
-	
-	
 	}else if (incomingCommand == "1") {
 		//match with all 4 leg sets
-		SendServoCommand("#1P1100#2P1200#3P1500#4P1600#5P1200#6P1250#7P1500#8P1600",time_delay);
-
-
+		SendServoCommand("#1P1100#2P1200#3P1500#4P1600#5P1200#6P1250#7P1500#8P1530",time_delay);
 	}else if (incomingCommand == "2") {
 		//match with all 4 leg sets
-		SendServoCommand("#1P1500#2P1200#3P1100#4P1600#5P1500#6P1250#7P1100#8P1600",time_delay);
-
+		SendServoCommand("#1P1500#2P1200#3P1100#4P1600#5P1500#6P1250#7P1100#8P1530",time_delay);
 	}else if (incomingCommand == "3") {
 		//match with all 4 leg sets
-		SendServoCommand("#1P1500#2P1600#3P1100#4P1200#5P1500#6P1600#7P1100#8P1200",time_delay);
-
+		SendServoCommand("#1P1500#2P1600#3P1100#4P1200#5P1500#6P1600#7P1100#8P1240",time_delay);
 	}else if (incomingCommand == "4") {
 		//match with all 4 leg sets
-		SendServoCommand("#1P1100#2P1600#3P1500#4P1200#5P1200#6P1600#7P1500#8P1200",time_delay);
-
-
-
+		SendServoCommand("#1P1100#2P1600#3P1500#4P1200#5P1200#6P1600#7P1500#8P1240",time_delay);
 	}else if (incomingCommand != "") {
-		//match with all 4 leg sets
-		//SendServoCommand("#1P1300#2P1300#3P1300#4P1300#5P1300#6P1300#7P1300#8P1300",time_delay);
 		SendCenterCommand(time_delay);
-	
 	}
 
 
@@ -122,20 +107,24 @@ void loop()
 
 
 void SendCenterCommand(int time_delay){
-	SendServoCommand("#1P1300#2P1380#3P1300#4P1380#5P1400#6P1425#7P1400#8P1340",time_delay);
+	SendServoCommand("#1P1300#2P1380#3P1400#4P1380#5P1400#6P1425#7P1320#8P1340",time_delay);
 }
 
+
+
+
+//4 steps***********************
 void SendFirstCommand(int time_delay){
-	SendServoCommand("#1P1100#2P1200#3P1500#4P1600#5P1200#6P1250#7P1500#8P1600",time_delay);
+	SendServoCommand("#1P1100#2P1200#3P1500#4P1560#5P1500#6P1220#7P1100#8P1530",time_delay);
 }
 void SendSecondCommand(int time_delay){
-	SendServoCommand("#1P1500#2P1200#3P1100#4P1600#5P1500#6P1250#7P1100#8P1600",time_delay);
+	SendServoCommand("#1P1500#2P1200#3P1100#4P1560#5P1200#6P1220#7P1500#8P1530",time_delay);
 }
 void SendThirdCommand(int time_delay){
-	SendServoCommand("#1P1500#2P1600#3P1100#4P1200#5P1500#6P1600#7P1100#8P1200",time_delay);
+	SendServoCommand("#1P1500#2P1530#3P1100#4P1200#5P1200#6P1590#7P1500#8P1190",time_delay);
 }
 void SendFourthCommand(int time_delay){
-	SendServoCommand("#1P1100#2P1600#3P1500#4P1200#5P1200#6P1600#7P1500#8P1200",time_delay);
+	SendServoCommand("#1P1100#2P1530#3P1500#4P1200#5P1500#6P1590#7P1100#8P1190",time_delay);
 }
 
 
@@ -167,13 +156,4 @@ void SendServoStatement(int chan,int ang, int time_delay){
     Serial1.print(String(ang));
     Serial1.print(String("T"));
     Serial1.println(String(time_delay));
-    
-  /*
-    if(Serial1.available()){
-      while(Serial1.available()) {
-          Serial.print(Serial1.read());
-      }
-      Serial.println("");
-    }
-*/
 }
