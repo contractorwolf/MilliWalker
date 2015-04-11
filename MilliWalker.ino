@@ -42,7 +42,13 @@ void setup() {
   Serial.begin(115200);
   Serial1.begin(9600);
   
-  delay(2000);
+
+  Serial.println("MilliWalker v1.0 Started");
+
+  delay(3000);
+
+
+
 }
 
 void loop()
@@ -59,32 +65,35 @@ void loop()
 	}
 
 	if (incomingCommand == "w") {
-		//match with all 4 leg sets
+		//send 4 step movements
 		SendFirstCommand(time_delay);
 		SendSecondCommand(time_delay);
 		SendThirdCommand(time_delay);
 		SendFourthCommand(time_delay);
 	}else if (incomingCommand == "r") {
-		//reverse all, not sure what this will look like
+		//reverse all steps, walks in opposite direction
 		SendFourthCommand(time_delay);
 		SendThirdCommand(time_delay);
 		SendSecondCommand(time_delay);		
 		SendFirstCommand(time_delay);
 	}else if (incomingCommand == "c") {
+		//center all joints
 		SendCenterCommand(time_delay);
 	}else if (incomingCommand == "1") {
-		//match with all 4 leg sets
-		SendServoCommand("#1P1100#2P1200#3P1500#4P1600#5P1200#6P1250#7P1500#8P1530",time_delay);
+		//first step, all servos
+		SendFirstCommand(time_delay);
+
 	}else if (incomingCommand == "2") {
-		//match with all 4 leg sets
-		SendServoCommand("#1P1500#2P1200#3P1100#4P1600#5P1500#6P1250#7P1100#8P1530",time_delay);
+		//second step, all servos
+		SendSecondCommand(time_delay);
 	}else if (incomingCommand == "3") {
-		//match with all 4 leg sets
-		SendServoCommand("#1P1500#2P1600#3P1100#4P1200#5P1500#6P1600#7P1100#8P1240",time_delay);
+		//third step, all servos
+		SendThirdCommand(time_delay);
 	}else if (incomingCommand == "4") {
-		//match with all 4 leg sets
-		SendServoCommand("#1P1100#2P1600#3P1500#4P1200#5P1200#6P1600#7P1500#8P1240",time_delay);
+		//fourth step, all servos
+		SendFourthCommand(time_delay);
 	}else if (incomingCommand != "") {
+		//defaults to center
 		SendCenterCommand(time_delay);
 	}
 
