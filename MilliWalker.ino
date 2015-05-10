@@ -1,5 +1,34 @@
+/*
+MilliWalker v3
+added joystick controls for forwards and back
+
+
+
+
+
+*/
+
+
+
 
 //int led = 13;
+int upJoystickPin = 2;
+int downJoystickPin = 3;
+int rightJoystickPin = 4;
+int leftJoystickPin = 5;
+int buttonJoystickPin = 6;
+
+
+bool upPressed = false;
+bool downPressed = false;
+bool leftPressed = false;
+bool rightPressed = false;
+bool buttonPressed = false;
+
+
+
+
+
 
 int pot1pin = A0;  // analog pin used to connect the potentiometer
 //int pot1power = 2;  
@@ -10,7 +39,7 @@ int pot2pin = A1;  // analog pin used to connect the potentiometer
 
 
 
-int val;
+int speed;
 int val2;
 int time_delay = 300;
 int centers[] = {1366,1329,1367,1369,1407,1399,1402,1297};//1572,1132
@@ -41,12 +70,24 @@ void setup()
 	pinMode(pot1pin, INPUT);  // backbone servos controller
 	pinMode(pot2pin, INPUT);  // leg servo controller
 
+
+	pinMode(upJoystickPin, INPUT);
+	pinMode(buttonJoystickPin, INPUT); 
+	pinMode(downJoystickPin, INPUT); 
+	pinMode(leftJoystickPin, INPUT);
+	pinMode(rightJoystickPin, INPUT);
+
+
+
+
+
+
 	Serial.begin(115200);// COM7 USB
 
 	Serial1.begin(9600);// USC32 Servo Control Board
   
 
-	Serial.println("MilliWalker v2 Started");
+	Serial.println("MilliWalker v3 Started");
 
 	delay(3000);
 }
@@ -56,14 +97,35 @@ void loop()
 {
 
 
-	val = analogRead(pot1pin);            // reads the value of the potentiometer (value between 0 and 1023) 
+	speed = analogRead(pot1pin);            // reads the value of the potentiometer (value between 0 and 1023) 
 	val2 = analogRead(pot2pin);            // reads the value of the potentiometer (value between 0 and 1023) 
 	//0-1017 pot values
 	//530-2340 max values
 
+	upPressed = digitalRead(upJoystickPin);
+	downPressed = digitalRead(downJoystickPin);  
+	leftPressed = digitalRead(leftJoystickPin);  
+	rightPressed = digitalRead(rightJoystickPin);  
+	buttonPressed = digitalRead(buttonJoystickPin);  
+
+	Serial.print("up: ");
+	Serial.print(upPressed);
+	Serial.print("  down: ");
+	Serial.print(downPressed);  
+	Serial.print("  left: ");
+	Serial.print(leftPressed);  
+	Serial.print("  right: ");
+	Serial.print(rightPressed);  
+	Serial.print("  button: ");
+	Serial.println(buttonPressed);  
+
+
+
+
+
 	// show analog values
-	Serial.print("analog1 value: ");  
-	Serial.println(val); 
+	Serial.print("speed value: ");  
+	Serial.print(speed); 
 
 	Serial.print("analog2 value: ");  
 	Serial.println(val2); 
@@ -90,43 +152,43 @@ void loop()
 
 
 
-	if (incomingCommand == "w") {
+	if (incomingCommand == "w"||upPressed) {
 		//send 4 step movements
 		//forward walking, 4 steps                    leg       leg
-		SendServoCommandList(1541,1579,1192,1119,1582,1149,1227,1547,val);//step 1
-		SendServoCommandList(1541,1079,1192,1619,1582,1649,1227,1047,val);//step 2
-		SendServoCommandList(1191,1079,1542,1619,1232,1649,1577,1047,val);//step 3
-		SendServoCommandList(1191,1579,1542,1119,1232,1149,1577,1547,val);//step 4
+		SendServoCommandList(1541,1579,1192,1119,1582,1149,1227,1547,speed);//step 1
+		SendServoCommandList(1541,1079,1192,1619,1582,1649,1227,1047,speed);//step 2
+		SendServoCommandList(1191,1079,1542,1619,1232,1649,1577,1047,speed);//step 3
+		SendServoCommandList(1191,1579,1542,1119,1232,1149,1577,1547,speed);//step 4
 
-	}else if (incomingCommand == "r") {
+	}else if (incomingCommand == "r"||downPressed) {
 		//reverse all steps, walks in opposite direction
-		SendServoCommandList(1191,1579,1542,1119,1232,1149,1577,1547,val);//step 4
-		SendServoCommandList(1191,1079,1542,1619,1232,1649,1577,1047,val);//step 3
-		SendServoCommandList(1541,1079,1192,1619,1582,1649,1227,1047,val);//step 2
-		SendServoCommandList(1541,1579,1192,1119,1582,1149,1227,1547,val);//step 1
+		SendServoCommandList(1191,1579,1542,1119,1232,1149,1577,1547,speed);//step 4
+		SendServoCommandList(1191,1079,1542,1619,1232,1649,1577,1047,speed);//step 3
+		SendServoCommandList(1541,1079,1192,1619,1582,1649,1227,1047,speed);//step 2
+		SendServoCommandList(1541,1579,1192,1119,1582,1149,1227,1547,speed);//step 1
 
-	}else if (incomingCommand == "c") {
+	}else if (incomingCommand == "c"||(!downPressed && !downPressed)) {
 		//center all joints
 		//center all servos
-		SendServoCommandList(centers[0],centers[1],centers[2],centers[3],centers[4],centers[5],centers[6],centers[7],val);
+		SendServoCommandList(centers[0],centers[1],centers[2],centers[3],centers[4],centers[5],centers[6],centers[7],speed);
 	}else if (incomingCommand == "1") {
 		//first step, all servos
-		SendServoCommandList(1541,1579,1192,1119,1582,1149,1227,1547,val);//step 1
+		SendServoCommandList(1541,1579,1192,1119,1582,1149,1227,1547,speed);//step 1
 
 	}else if (incomingCommand == "2") {
 		//second step, all servos
-		SendServoCommandList(1541,1079,1192,1619,1582,1649,1227,1147,val);//step 2
+		SendServoCommandList(1541,1079,1192,1619,1582,1649,1227,1147,speed);//step 2
 
 	}else if (incomingCommand == "3") {
 		//third step, all servos
-		SendServoCommandList(1191,1079,1542,1619,1232,1649,1577,1147,val);//step 3
+		SendServoCommandList(1191,1079,1542,1619,1232,1649,1577,1147,speed);//step 3
 	}else if (incomingCommand == "4") {
 		//fourth step, all servos
-		SendServoCommandList(1191,1579,1542,1119,1232,1149,1577,1547,val);//step 4
+		SendServoCommandList(1191,1579,1542,1119,1232,1149,1577,1547,speed);//step 4
 	}else if (incomingCommand != "") {
 		//defaults to center
 		//center all servos
-		SendServoCommandList(centers[0],centers[1],centers[2],centers[3],centers[4],centers[5],centers[6],centers[7],val);
+		SendServoCommandList(centers[0],centers[1],centers[2],centers[3],centers[4],centers[5],centers[6],centers[7],speed);
 	}
 
 
