@@ -63,8 +63,9 @@ extern "C" void __cxa_pure_virtual() {;}
 
 //
 //
-void SendServoCommandList(int servo0,int servo1,int servo2,int servo3,int servo4,int servo5,int servo6,int servo7,int time_delay);
+void SendServoCommandList(int servo0,int servo1,int servo2,int servo3,int servo4,int servo5,int servo6,int servo7,int servo8,int time_delay);
 void SendServoCommand(int pot_angle, int pot_angle2, int time_delay);
+void SendSingleServoCommand(int servo, int pot_angle, int time_delay);
 
 #include <MilliWalker.ino>
 #endif
